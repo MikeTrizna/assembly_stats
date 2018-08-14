@@ -14,9 +14,15 @@ The only Python library that this script relies on is NumPy, but this is install
 
 .. code-block:: bash
 
-	module load bioinformatics/assembly_stats
+  # Load the HPC assembly_stats module, which activates a conda environment
+  # with the appropriate versions of Python and NumPy installed.
 
-  assembly_stats.py [genome_file.fasta]
+  $ module load bioinformatics/assembly_stats
+
+  # Now that the module is loaded, assembly_stats.py should be accessible directly
+  # in your PATH.
+
+  $ assembly_stats.py [genome_file.fasta]
 
 After calculating the statistics for the genome assembly, they will be printed out in JSON format.
 
