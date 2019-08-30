@@ -1,5 +1,3 @@
-#! /usr/bin/env python
-
 import numpy as np
 from itertools import groupby
 import json
@@ -74,7 +72,7 @@ def read_genome(fasta_file):
     return contig_lens, scaffold_lens, gc_cont
 
 
-def assembly_stats(seq_lens, gc_cont):
+def calculate_stats(seq_lens, gc_cont):
     stats = {}
     seq_array = np.array(seq_lens)
     stats['sequence_count'] = seq_array.size
@@ -100,8 +98,8 @@ def assembly_stats(seq_lens, gc_cont):
 if __name__ == "__main__":
     infilename = sys.argv[1]
     contig_lens, scaffold_lens, gc_cont = read_genome(infilename)
-    contig_stats = assembly_stats(contig_lens, gc_cont)
-    scaffold_stats = assembly_stats(scaffold_lens, gc_cont)
+    contig_stats = calculate_stats(contig_lens, gc_cont)
+    scaffold_stats = calculate_stats(scaffold_lens, gc_cont)
     stat_output = {'Contig Stats': contig_stats,
                    'Scaffold Stats': scaffold_stats}
     print(json.dumps(stat_output, indent=2, sort_keys=True))
