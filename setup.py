@@ -9,7 +9,7 @@ requirements = [
 
 setuptools.setup(
     name="assembly_stats",
-    version="0.1.1",
+    version="0.1.2",
     author="Mike Trizna",
     author_email="triznam@si.edu",
     description="Calculates both scaffold and contig statistics (N50, L50, etc.) from a scaffold FASTA file.",
