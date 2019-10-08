@@ -9,7 +9,7 @@ requirements = [
 
 setuptools.setup(
     name="assembly_stats",
-    version="0.1.2",
+    version="0.1.3",
     author="Mike Trizna",
     author_email="triznam@si.edu",
     description="Calculates both scaffold and contig statistics (N50, L50, etc.) from a scaffold FASTA file.",
@@ -26,5 +26,7 @@ setuptools.setup(
     classifiers=[
         "Programming Language :: Python :: 3",
         "Operating System :: OS Independent",
+         # Pick your license as you wish
+        'License :: OSI Approved :: MIT License',
     ],
 )
