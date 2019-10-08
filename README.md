@@ -1,24 +1,29 @@
 # assembly_stats
 
-A Python script that takes a FASTA file as input and calculates both scaffold and contig statistics (N50, L50, etc.) from a scaffold FASTA file. It does this by breaking each scaffold wherever there is more than one N and then calculating statistics for both the scaffolds and contigs.
+A Python library that takes a FASTA file as input and calculates both scaffold and contig statistics (N50, L50, etc.) from a scaffold FASTA file. It does this by breaking each scaffold wherever there is more than one N and then calculating statistics for both the scaffolds and contigs.
 
-This is a re-write of fasta_metadata_parser to speed up the old implementation, and -- most importantly -- to learn how to install Python scripts onto the Smithsonian HPC.
+This is a re-write of [fasta_metadata_parser](https://github.com/pbfrandsen/fasta_metadata_parser) to speed up the old implementation, and -- most importantly -- to learn how to install Python scripts onto the Smithsonian HPC.
 
+## Installation
+
+```
+pip install assembly_stats
+```
 
 ## Usage
 
-The only Python library that this script relies on is NumPy, but this is installed and set up in a conda environment on the HPC.
+```
+  $ assembly_stats -h
 
-``` 
-  # Load the HPC assembly_stats module, which activates a conda environment
-  # with the appropriate versions of Python and NumPy installed.
+    usage: assembly_stats [-h] filename
 
-  $ module load bioinformatics/assembly_stats
+    Calculate statistics about genome assemblies.
 
-  # Now that the module is loaded, assembly_stats.py should be accessible directly
-  # in your PATH.
+    positional arguments:
+      filename    Genome file in FASTA format.
 
-  $ assembly_stats.py [genome_file.fasta]
+    optional arguments:
+      -h, --help  show this help message and exit
 ```
 
 After calculating the statistics for the genome assembly, they will be printed out in JSON format.
