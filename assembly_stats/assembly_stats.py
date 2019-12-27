@@ -29,7 +29,7 @@ def fasta_iter(fasta_file):
         # drop the ">"
         header = next(header)[1:].strip()
         # join all sequence lines to one.
-        seq = "".join(s.strip() for s in next(fa_iter))
+        seq = "".join(s.upper().strip() for s in next(fa_iter))
         yield header, seq
 
 
