@@ -90,7 +90,7 @@ def calculate_stats(seq_lens, gc_cont):
         l_level = int(np.where(csum == csumn)[0])
         n_level = int(sorted_lens[l_level])
 
-        stats['L' + str(level)] = l_level
+        stats['L' + str(level)] = l_level + 1
         stats['N' + str(level)] = n_level
     return stats
 
